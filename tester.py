@@ -1,11 +1,16 @@
-import geo.utils as utils  # geo.utils 모듈 가져오기
+from geo.utils import add, subtract
 
-# 빗변 길이 계산 (a=3, b=4)
-a, b = 3, 4
-c = utils.hypotenuse(a, b)  # hypotenuse 함수 호출
-print('c =', c)
+def test_add():
+    assert add(2, 3) == 5
+    assert add(-1, 1) == 0
+    print("add() 테스트 성공")
 
-# 원의 넓이 계산 (반지름 r=10)
-r = 10
-area = utils.circle_area(r)  # circle_area 함수 호출
-print('area =', area)
+def test_subtract():
+    assert subtract(5, 3) == 2
+    assert subtract(0, 1) == -1
+    print("subtract() 테스트 성공")
+
+if __name__ == "__main__":
+    test_add()
+    test_subtract()
+    print("모든 테스트 성공")
